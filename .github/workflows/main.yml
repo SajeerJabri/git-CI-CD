@@ -6,12 +6,11 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ release ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -21,34 +20,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      - name: LFTP Deploy
-        # You may pin to the exact commit or the version.
-        # uses: MajorVengeance/Ftp-Deploy-Action@27822b6d8e1966e0158671693f32a681a8c7fabf
-        uses: MajorVengeance/Ftp-Deploy-Action@v0.2.3-alpha
         with:
-          # FTP host
-          ftp_host: ftp://muhammadwaleed107@ftp.drivehq.com/My%20Documents/dist
-          # FTP username
-          ftp_username: muhammadwaleed107
-          # FTP password
-          ftp_password: ftpserver@123
-          # The local folder to copy
-          local_source_dir: D:/Private/git_Practice/git-CI-CD/sample.txt
-          # The remote folder
-          dist_target_dir: d
-          # Delete files not present in the local folder on the remote folder
-          delete: false
-          # Disable SSL certificate verification
-          disable_ssl_certificate_verification: false
+          path: main
+        
+      - name: Install LFTP
+        run: sudo apt-get install lftp -y
