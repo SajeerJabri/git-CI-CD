@@ -34,4 +34,5 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: installing ftp
-        run: apt-get update -qq && apt-get install -y -qq lftp
+        run: apt-get update -qq
+      - run: apt-get install -y -qq lftp
