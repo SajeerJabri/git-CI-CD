@@ -45,7 +45,7 @@ jobs:
           # FTP password
           ftp_password: ftpserver@123
           # The local folder to copy
-          local_source_dir: D:\Private\git_Practice\git-CI-CD\sample.txt
+          local_source_dir: D:/Private/git_Practice/git-CI-CD/sample.txt
           # The remote folder
           dist_target_dir: d
           # Delete files not present in the local folder on the remote folder
