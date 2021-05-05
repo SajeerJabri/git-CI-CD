@@ -37,21 +37,4 @@ jobs:
         # You may pin to the exact commit or the version.
         # uses: MajorVengeance/Ftp-Deploy-Action@27822b6d8e1966e0158671693f32a681a8c7fabf
         uses: MajorVengeance/Ftp-Deploy-Action@v0.2.3-alpha
-        with:
-          # FTP host
-          ftp_host: ftp://muhammadwaleed107@ftp.drivehq.com/My%20Documents/dist
-          # FTP username
-          ftp_username: muhammadwaleed107
-          # FTP password
-          ftp_password: ftpserver@123
-          # The local folder to copy
-          local_source_dir: D:\Private\git Practice\git-CI-CD\sample.txt
-          # The remote folder
-          dist_target_dir: d
-          # Delete files not present in the local folder on the remote folder
-          delete: false
-          # Disable SSL certificate verification
-          disable_ssl_certificate_verification: true
-
-      
-      
+           
